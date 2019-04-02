@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+</head>
+<body>
+<h1>Learn JSON</h1>
+<div id="output"></div>
+<script type="text/javascript">
+    var data = '{"results":[{"gender":"female","name":{"title":"miss","first":"miriam","last":"rivera"},' +
+        '"location":{"street":"3370 college st","city":"dubbo","state":"tasmania",' +
+        '"postcode":5702,"coordinates":{"latitude":"-79.9606","longitude":"80.2075"},' +
+        '"timezone":{"offset":"+4:30","description":"Kabul"}},"email":"miriam.rivera@example.com","login":{"uuid":"bc1a115a-b395-42d1-9565-aead9502df1f",' +
+        '"username":"goldenostrich928","password":"henti","salt":"nJwl1gvw","md5":"bd52aa5093ff682ce6e7aeed3c5cb24b",' +
+        '"sha1":"d9c7225945dd7a3db4f8a1d96c02ae5ef758adb0","sha256":"d80ee80ed101fb59f54276fdea13e7a3112135dfb9df2eba24be2f3c9ee9c8f0"},' +
+        '"dob":{"date":"1979-05-20T00:15:32Z","age":39},"registered":{"date":"2015-12-15T10:35:22Z","age":3},"phone":"03-0189-0922",' +
+        '"cell":"0415-865-922","id":{"name":"TFN","value":"732768364"},' +
+        '"picture":{"large":"https://randomuser.me/api/portraits/women/58.jpg","medium":"https://randomuser.me/api/portraits/med/women/58.jpg",' +
+        '"thumbnail":"https://randomuser.me/api/portraits/thumb/women/58.jpg"},"nat":"AU"}],"info":{"seed":"3702f3e13443177e","results":1,"page":1,"version":"1.2"}}';
+    var output = document.querySelector('#output');
+    var dataJSON = JSON.parse(data);
+    var person = dataJSON.results[0];
+
+    var html = person.name.first + '' + person.name.last;
+    html += '<img src="' + person.picture.thumbnail + '">';
+    output.innerHTML = html;
+
+    var strMe = JSON.stringify(dataJSON);
+    console.log(strMe);
+
+</script>
+</body>
+</html>
