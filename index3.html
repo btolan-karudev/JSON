@@ -6,19 +6,15 @@
 </head>
 <body>
 <h1>Task List</h1>
-<div id="output"></div>
+<div id="output">
+    <ul id="taskList"></ul>
+</div>
 
 <script type="text/javascript">
     var data = '{"tasks":{"Cut Green":false,"Clean Room":false,"Goto Gym":true,"Make Dinner":false}}';
-// var data = {
-//         "tasks": {
-//             "Cut Green": false,
-//             "Clean Room": false,
-//             "Go to Gym": true,
-//             "Make Dinner": false
-//         }
-//     };
-    console.log(data);
+    var dataJSON = JSON.parse(data);
+
+    console.log(dataJSON);
 </script>
 </body>
 </html>
