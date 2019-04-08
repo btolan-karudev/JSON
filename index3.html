@@ -14,6 +14,16 @@
     var data = '{"tasks":{"Cut Green":false,"Clean Room":false,"Goto Gym":true,"Make Dinner":false}}';
     var dataJSON = JSON.parse(data);
 
+    var output = document.getElementById('output');
+    var taskList = document.querySelector('#taskList');
+
+    for (var key in dataJSON.tasks) {
+        console.log(key, dataJSON.tasks[key]);
+        var status = !dataJSON.tasks[key] ? '':'checked';
+        var html = '<li>'+key+'<input type="checkbox" value="'+key+'"'+status+'></li>';
+        taskList.innerHTML += html;
+    }
+
     console.log(dataJSON);
 </script>
 </body>
